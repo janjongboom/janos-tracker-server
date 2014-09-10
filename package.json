@@ -1,0 +1,10 @@
+{
+  "name": "janos-tracker-server",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.8.1",
+    "express": "^4.9.0",
+    "nstore": "^0.5.2",
+    "request": "^2.42.0"
+  }
+}

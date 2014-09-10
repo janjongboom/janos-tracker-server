@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Location</title>
+</head>
+
+<body>
+  <h1>%name%</h1>
+  <div id="location" style="%show%">
+    <img src="https://maps.google.com/maps/api/staticmap?size=640x480&sensor=false&zoom=15&center=%lat%,%lon%&markers=color:red|%lat%,%lon%" />
+    <p>Accuracy: %accuracy% meters</p>
+    <p>Updated: %updated%</p>
+  </div>
+  <button>Request new location</button>
+
+  <script>
+    document.querySelector('button').onclick = function() {
+      var x = new XMLHttpRequest();
+      x.open('POST', '/trigger/%name%');
+      x.send();
+
+      alert('Requested. Some patience please...');
+    };
+  </script>
+</body>
+</html>
